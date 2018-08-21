@@ -1,17 +1,23 @@
 backend:
   name: git-gateway
   branch: master # Branch to update (optional; defaults to master)
-# This line should *not* be indented
 media_folder: "static/images/uploads" # Media files will be stored in the repo under images/uploads
 public_folder: "/images/uploads"
-
 collections:
   - name: "recipe"
     label: "Recipe"
-    folder: "_posts/recipe"
+    folder: "site/content/recipes"
     create: true
     slug: "{{year}}--{{month}}--{{day}}--{{slug}}"
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Featured Image", name: "featured_image", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
+
+languages:
+  en:
+    languageName: English
+    weight: 1
+  de:
+    languageName: Deutsche
+    weight: 2
