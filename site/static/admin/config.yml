@@ -13,11 +13,35 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Featured Image", name: "featured_image", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
+      - label: "Language"
+        name: "language"
+        widget: "select"
+        options:
+          - { label: "English", value: "en" }
+          - { label: "Deutsche", value: "de" }
+  - name: "recipe_de"
+    label: "Rezept"
+    folder: "site/content/deutsche/recipes"
+    create: true
+    slug: "{{year}}--{{month}}--{{day}}--{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Featured Image", name: "featured_image", widget: "image"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - label: "Language"
+        name: "language"
+        widget: "select"
+        options:
+          - { label: "English", value: "en" }
+          - { label: "Deutsche", value: "de" }
 
+DefaultContentLanguage: en
 languages:
   en:
+    contentDir: content/english
     languageName: English
     weight: 1
   de:
+    contentDir: content/deutsche
     languageName: Deutsche
     weight: 2
