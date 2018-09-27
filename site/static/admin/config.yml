@@ -6,7 +6,8 @@ public_folder: "/images/uploads"
 collections:
   - name: "recipe"
     label: "Recipe"
-    folder: "site/content/recipes"
+    folder: "content/recipes"
+    filter: {field: "contenttype", value: "recipe"}
     slug: "_index.{{ language }}"
     create: true
     fields:
@@ -18,14 +19,3 @@ collections:
       - {label: "Body", name: "body", widget: "markdown"}
     editor:
       -preview: false
-
-DefaultContentLanguage: en
-languages:
-  en:
-    contentDir: content/english
-    languageName: English
-    weight: 1
-  de:
-    contentDir: content/deutsche
-    languageName: Deutsche
-    weight: 2

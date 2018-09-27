@@ -2,4 +2,8 @@
 
 {{ partial "nav" . }}
 
+{{ range (where .Site.Pages "Section" "recipes") }}
+  <a href="{{ .URL }}">{{ .title }}</a>
+{{ end }}
+
 {{end}}
