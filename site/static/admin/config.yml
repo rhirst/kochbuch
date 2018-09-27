@@ -6,32 +6,18 @@ public_folder: "/images/uploads"
 collections:
   - name: "recipe"
     label: "Recipe"
-    folder: "site/content/english/recipes"
+    folder: "site/content/recipes"
+    slug: "_index.{{ language }}"
     create: true
     fields:
+      - {label: "Visible", name: "visible", widget: "boolean", default: false, required: false}
+      - {label: "Content Type", name: "contenttype", widget: "hidden", default: "section"}
+      - {label: "Language", name: "language", widget: "select", options: ["en", "de"]}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Featured Image", name: "featured_image", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
-      - label: "Language"
-        name: "language"
-        widget: "select"
-        options:
-          - { label: "English", value: "en" }
-          - { label: "Deutsche", value: "de" }
-  - name: "recipe_de"
-    label: "Rezept"
-    folder: "site/content/deutsche/recipes"
-    create: true
-    fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Featured Image", name: "featured_image", widget: "image"}
-      - {label: "Body", name: "body", widget: "markdown"}
-      - label: "Language"
-        name: "language"
-        widget: "select"
-        options:
-          - { label: "English", value: "en" }
-          - { label: "Deutsche", value: "de" }
+    editor:
+      -preview: false
 
 DefaultContentLanguage: en
 languages:
